@@ -173,10 +173,8 @@ dpkg -i nginx_1.8.1-1~trusty_amd64.deb
 </code></pre>
 
 <p><strong><em>Step 5.1 Problem with compile CC</em></strong></p>
-<pre><code>
-    mount | grep tmp
-    export PATH="/usr/bin:$PATH"
-</code></pre>
+<pre><code>mount | grep tmp
+export PATH="/usr/bin:$PATH"</code></pre>
 
 <h3><strong>Step 6 Check</strong></h3>
 
