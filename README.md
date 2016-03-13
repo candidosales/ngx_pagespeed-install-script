@@ -228,7 +228,7 @@ pagespeed FileCachePath /var/ngx_pagespeed_cache;
 
 <p>You must see </p>
 
-<figure><img src="result_pagespeed_curl.png"/></figure>
+<figure><img src="result_pagespeed_curl_1v.png"/></figure>
 
 <p>It’s all guys!</p>
 
