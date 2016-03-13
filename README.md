@@ -233,3 +233,9 @@ pagespeed FileCachePath /var/ngx_pagespeed_cache;
 <p>P.S. for configure like wanna you - go here :</p>
 
 <p><a href="https://developers.google.com/speed/pagespeed/module/configuration">https://developers.google.com/speed/pagespeed/module/configuration</a></p>
+
+
+<h3>References</h3>
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-add-ngx_pagespeed-to-nginx-on-ubuntu-14-04">https://www.digitalocean.com/community/tutorials/how-to-add-ngx_pagespeed-to-nginx-on-ubuntu-14-04</a></p>
+<p><a href="https://developers.google.com/speed/pagespeed/module/build_ngx_pagespeed_from_source">https://developers.google.com/speed/pagespeed/module/build_ngx_pagespeed_from_source</a></p>
+<p><a href="https://github.com/pagespeed/ngx_pagespeed/issues/1032">https://github.com/pagespeed/ngx_pagespeed/issues/1032</a></p>
