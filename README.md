@@ -178,21 +178,14 @@ dpkg -i nginx_1.8.1-1~trusty_amd64.deb
     export PATH="/usr/bin:$PATH"
 </code></pre>
 
-<h3><strong>Step 6 Install</strong></h3>
-
-<pre><code>dpkg -i/new/ngix_source/nginx_1.8.1-1trusty_amd64.deb
-</code></pre>
-
-<figure><img src="Screen%20Shot%202015-09-01%20at%2013.09.52.png"/></figure>
-
-<h3><strong>Step 7 Check</strong></h3>
+<h3><strong>Step 6 Check</strong></h3>
 
 <pre><code>nginx -V
 </code></pre>
 
 <p>in text we must see</p>
 
-<figure><img src="Screen%20Shot%202015-09-01%20at%2013.01.13.png"/></figure>
+<figure><img src="version_nginx.png"/></figure>
 
 <p>Now go to you public IP</p>
 
@@ -200,7 +193,7 @@ dpkg -i nginx_1.8.1-1~trusty_amd64.deb
 
 <figure><img src="Screen%20Shot%202015-09-01%20at%2013.06.51.png"/></figure>
 
-<h3><strong>Step 8 Config</strong></h3>
+<h3><strong>Step 7 Config</strong></h3>
 
 <p>Make cache folder</p>
 
@@ -221,7 +214,7 @@ pagespeed FileCachePath /var/ngx_pagespeed_cache;
 
 <p>Like that</p>
 
-<figure><img src="Screen%20Shot%202015-09-01%20at%2013.42.55.png"/></figure>
+<figure><img src="config_nginx_pagespeed.png"/></figure>
 
 <p>Restart</p>
 
@@ -230,7 +223,7 @@ pagespeed FileCachePath /var/ngx_pagespeed_cache;
 
 <p>Check </p>
 
-<pre><code>curl -I -p http://localhost|grep X-Page-Speed
+<pre><code>curl -I -p http://localhost | grep X-Page-Speed
 </code></pre>
 
 <p>You must see </p>
