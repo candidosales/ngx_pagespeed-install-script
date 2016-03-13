@@ -122,17 +122,17 @@ cd ~/new/ngx_pagespeed/
 
 <p>Check ngx-version on the official site and change if you need. <a href="https://developers.google.com/speed/pagespeed/module/release_notes"> https://developers.google.com/speed/pagespeed/module/release<em>notes </em></a><img src="Screen%20Shot%202015-09-01%20at%2013.14.17.png"/></p>
 
-<pre><code>ngx_version=1.9.32.6
+<pre><code>ngx_version=1.10.33.6
 wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${ngx_version}-beta.zip
 unzip release-${ngx_version}-beta.zip
-cd ngx_pagespeed-release-1.9.32.6-beta/
+cd ngx_pagespeed-release-${ngx_version}-beta/
 wget https://dl.google.com/dl/page-speed/psol/${ngx_version}.tar.gz
-tar -xzf 1.9.32.6.tar.gz
+tar -xzf ${ngx_version}.tar.gz
 </code></pre>
 
 <h3><strong>Step 4 Configure before build</strong></h3>
 
-<pre><code>cd ~/new/nginx_source/nginx-1.8.0/debian/
+<pre><code>cd ~/new/nginx_source/nginx-1.8.1/debian/
 </code></pre>
 
 <p>Time use vim. That help avoid syntax errors</p>
@@ -142,7 +142,7 @@ tar -xzf 1.9.32.6.tar.gz
 
 <p>Need add in configure module that strings</p>
 
-<pre><code>--add-module=../../ngxpagespeed/ngxpagespeed-release-1.9.32.6-beta \
+<pre><code>--add-module=../../ngx_pagespeed/ngx_pagespeed-release-1.10.33.6-beta \
 </code></pre>
 
 <p>after string <code>--prefix=/etc/nginx \
@@ -158,15 +158,22 @@ tar -xzf 1.9.32.6.tar.gz
 
 <h3><strong>Step 5 Building</strong></h3>
 
-<pre><code>cd ~/new/nginx_source/nginx-1.8.0/
+<pre><code>cd ~/new/nginx_source/nginx-1.8.1/
 dpkg-buildpackage -b
 cd ~/new/ngix_source/
-dpkg -i nginx_1.8.0-1~trusty_amd64.deb
+dpkg -i nginx_1.8.1-1~trusty_amd64.deb
 </code></pre>
+<p><strong><em>Step 5.1 Problem with compile CC</em></strong></p>
+<pre>
+    <code>
+    mount | grep tmp
+    export PATH="/usr/bin:$PATH"
+    </code>
+</pre>
 
 <h3><strong>Step 6 Install</strong></h3>
 
-<pre><code>dpkg -i/new/ngix_source/nginx_1.8.0-1trusty_amd64.deb
+<pre><code>dpkg -i/new/ngix_source/nginx_1.8.1-1trusty_amd64.deb
 </code></pre>
 
 <figure><img src="Screen%20Shot%202015-09-01%20at%2013.09.52.png"/></figure>
@@ -216,7 +223,7 @@ pagespeed FileCachePath /var/ngx_pagespeed_cache;
 
 <p>Check </p>
 
-<pre><code>curl -I -p http://localhost|grep X-Page-Speed
+<pre><code>curl -I -p http://localhost | grep X-Page-Speed
 </code></pre>
 
 <p>You must see </p>
